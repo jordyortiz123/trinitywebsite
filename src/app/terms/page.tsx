@@ -278,22 +278,65 @@ export default function TermsPage() {
               </div>
 
               <div>
-                <h3 className="text-base font-bold text-fiesta-teal mb-2">SEVERABILITY</h3>
+                <h3 className="text-base font-bold text-fiesta-teal mb-2">COVENANT NOT TO SUE</h3>
                 <p>
-                  If any provision of this Agreement is found to be invalid, illegal, or unenforceable by a court
-                  of competent jurisdiction, the remaining provisions shall continue in full force and effect. The
-                  invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable
-                  while preserving the original intent.
+                  The Customer, on behalf of themselves, their spouse, children, minor dependents, guests, invitees,
+                  heirs, next of kin, executors, administrators, personal representatives, successors, and assigns,
+                  COVENANTS NOT TO SUE any Released Party for any claim, loss, damage, or liability arising from
+                  or related to the rental equipment or services, regardless of the cause, including claims arising
+                  from the NEGLIGENCE, GROSS NEGLIGENCE, RECKLESSNESS, OR FAULT of any Released Party,
+                  to the maximum extent permitted by the laws of the State of Colorado.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-bold text-fiesta-teal mb-2">LIMITATION OF LIABILITY</h3>
+                <p>
+                  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COMPANY&apos;S
+                  TOTAL LIABILITY TO THE CUSTOMER, REGARDLESS OF THE FORM OF ACTION (WHETHER IN CONTRACT,
+                  TORT, STRICT LIABILITY, OR OTHERWISE), EXCEED THE TOTAL AMOUNT PAID BY THE CUSTOMER TO
+                  THE COMPANY FOR THE SPECIFIC RENTAL GIVING RISE TO THE CLAIM. IN NO EVENT SHALL THE COMPANY
+                  BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE
+                  DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER
+                  INTANGIBLE LOSSES.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-bold text-fiesta-teal mb-2">ELECTRONIC SIGNATURE ACKNOWLEDGMENT</h3>
+                <p>
+                  By submitting the booking form and checking the agreement checkbox on the Fiesta Fun Familia
+                  with Trinity website, the Customer acknowledges that their electronic acceptance constitutes
+                  a valid and enforceable electronic signature under the Colorado Uniform Electronic Transactions
+                  Act (C.R.S. § 24-71.3-101 et seq.) and the federal Electronic Signatures in Global and National
+                  Commerce Act (E-SIGN Act, 15 U.S.C. § 7001 et seq.). The Customer&apos;s IP address, timestamp,
+                  and browser information are recorded at the time of submission as evidence of acceptance.
+                  The Customer has had the opportunity to consult with an attorney before agreeing and has either
+                  done so or voluntarily chosen not to.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-bold text-fiesta-teal mb-2">SEVERABILITY & SURVIVAL</h3>
+                <p>
+                  If any provision of this Agreement is found to be invalid, illegal, void, or unenforceable by a court
+                  of competent jurisdiction, such finding shall not affect the validity or enforceability of the remaining
+                  provisions, which shall continue in full force and effect. Any invalid provision shall be modified to
+                  the minimum extent necessary to make it valid and enforceable while preserving the Parties&apos; original
+                  intent. The waiver, release, indemnification, assumption of risk, covenant not to sue, and limitation
+                  of liability provisions shall survive the termination or expiration of this Agreement.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-base font-bold text-fiesta-teal mb-2">ENTIRE AGREEMENT</h3>
                 <p>
-                  This Agreement, including the Rental Agreement and this Liability Waiver, constitutes the entire
-                  agreement between the parties and supersedes all prior written or oral agreements, representations,
-                  or understandings. No modification to this Agreement shall be valid unless made in writing and
-                  signed by both parties.
+                  This Agreement constitutes the entire agreement between the Parties regarding the subject matter
+                  hereof and supersedes all prior or contemporaneous written or oral agreements, representations,
+                  warranties, and understandings. No amendment, modification, or supplement to this Agreement shall
+                  be valid or binding unless made in writing and signed by authorized representatives of both Parties.
+                  No waiver of any provision shall be deemed a waiver of any other provision or of the same provision
+                  on any future occasion.
                 </p>
               </div>
 

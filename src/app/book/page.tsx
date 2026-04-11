@@ -1,6 +1,8 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import type { FormEvent } from "react";
+import { downloadWaiver } from "@/components/WaiverDocument";
+import type { WaiverData } from "@/components/WaiverDocument";
 
 const packages = [
   { id: "basic", label: "Fiesta Basic", price: "$125+" },
@@ -63,6 +65,8 @@ export default function BookPage() {
   const [selectedPackage, setSelectedPackage] = useState("");
   const [waiverAccepted, setWaiverAccepted] = useState(false);
   const [showWaiver, setShowWaiver] = useState(false);
+  const [waiverData, setWaiverData] = useState<WaiverData | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const recommendation = useMemo(() => getRecommendation(kidCount), [kidCount]);
 
@@ -72,13 +76,38 @@ export default function BookPage() {
       alert("Please accept the liability waiver to proceed. / Por favor acepta la exención de responsabilidad.");
       return;
     }
+
+    const form = formRef.current;
+    if (!form) return;
+
+    const formData = new FormData(form);
+    const now = new Date();
+    const dateStr = now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+
+    const data: WaiverData = {
+      customerName: (formData.get("customerName") as string) || "",
+      phone: (formData.get("phone") as string) || "",
+      email: (formData.get("email") as string) || "",
+      eventDate: (formData.get("eventDate") as string) || "",
+      eventTime: (formData.get("eventTime") as string) || "",
+      eventType: (formData.get("eventType") as string) || "",
+      address: (formData.get("address") as string) || "",
+      kidCount: kidCount,
+      selectedPackage: selectedPackage
+        ? packages.find((p) => p.id === selectedPackage)?.label || selectedPackage
+        : recommendation?.package || "Custom",
+      signatureDate: dateStr,
+    };
+
+    setWaiverData(data);
+    downloadWaiver(data);
     setSubmitted(true);
   }
 
   if (submitted) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center bg-fiesta-cream">
-        <div className="text-center max-w-md mx-auto px-4">
+        <div className="text-center max-w-lg mx-auto px-4">
           <div className="text-8xl mb-6">🎉</div>
           <h1 className="text-3xl font-extrabold text-fiesta-teal mb-3">Booking Request Sent!</h1>
           <h2 className="text-xl text-fiesta-orange font-bold mb-4">¡Solicitud de Reserva Enviada!</h2>
@@ -86,6 +115,33 @@ export default function BookPage() {
             We&apos;ll contact you within 24 hours to confirm your booking and discuss details.
             Nos comunicaremos contigo dentro de 24 horas.
           </p>
+
+          {/* Waiver Download Section */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-fiesta-green/30 mb-6 text-left">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-3xl">📄</span>
+              <div>
+                <h3 className="font-bold text-fiesta-teal">Liability Waiver & Agreement</h3>
+                <p className="text-sm text-fiesta-green font-medium">Document opened in new tab</p>
+              </div>
+            </div>
+            <p className="text-sm text-fiesta-teal/60 mb-4">
+              Your signed waiver document has been opened. Please <strong>print it or save it as PDF</strong> for your records.
+              Use the &quot;Print / Save as PDF&quot; button in the document.
+            </p>
+            <p className="text-xs text-fiesta-teal/40 mb-4">
+              Su documento de exención firmado se ha abierto. Por favor guárdelo como PDF para sus registros.
+            </p>
+            {waiverData && (
+              <button
+                onClick={() => downloadWaiver(waiverData)}
+                className="w-full bg-fiesta-teal hover:bg-fiesta-green text-white py-3 rounded-xl font-bold transition-colors"
+              >
+                📄 Open Waiver Again / Abrir Exención de Nuevo
+              </button>
+            )}
+          </div>
+
           <a
             href="tel:303-295-3886"
             className="inline-block bg-fiesta-orange text-white px-6 py-3 rounded-full font-bold hover:bg-fiesta-red transition-colors"
@@ -93,7 +149,7 @@ export default function BookPage() {
             📞 Call Now for Faster Booking: 303-295-3886
           </a>
           <button
-            onClick={() => { setSubmitted(false); setWaiverAccepted(false); }}
+            onClick={() => { setSubmitted(false); setWaiverAccepted(false); setWaiverData(null); }}
             className="block mx-auto mt-4 text-fiesta-orange hover:underline font-medium"
           >
             Submit Another Booking
@@ -123,7 +179,7 @@ export default function BookPage() {
       <section className="py-16 bg-fiesta-cream">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-fiesta-yellow/20">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
 
               {/* 1. Personal Info */}
               <div>
@@ -134,16 +190,16 @@ export default function BookPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-fiesta-teal mb-1">Full Name / Nombre *</label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="Your name" />
+                    <input type="text" name="customerName" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="Your name" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-fiesta-teal mb-1">Phone / Teléfono *</label>
-                    <input type="tel" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="(303) 000-0000" />
+                    <input type="tel" name="phone" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="(303) 000-0000" />
                   </div>
                 </div>
                 <div className="mt-4">
                   <label className="block text-sm font-semibold text-fiesta-teal mb-1">Email *</label>
-                  <input type="email" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="your@email.com" />
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="your@email.com" />
                 </div>
               </div>
 
@@ -156,17 +212,17 @@ export default function BookPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-fiesta-teal mb-1">Event Date / Fecha *</label>
-                    <input type="date" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" />
+                    <input type="date" name="eventDate" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-fiesta-teal mb-1">Event Time / Hora</label>
-                    <input type="time" className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" />
+                    <input type="time" name="eventTime" className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" />
                   </div>
                 </div>
                 <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-fiesta-teal mb-1">Event Type / Tipo</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange">
+                    <select name="eventType" className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange">
                       <option>Birthday Party / Cumpleaños</option>
                       <option>Quinceañera</option>
                       <option>Primera Comunión</option>
@@ -180,7 +236,7 @@ export default function BookPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-fiesta-teal mb-1">Delivery Address / Dirección *</label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="Denver, CO address" />
+                    <input type="text" name="address" required className="w-full px-4 py-3 rounded-xl border border-fiesta-yellow/30 bg-fiesta-cream/50 text-fiesta-teal focus:outline-none focus:ring-2 focus:ring-fiesta-orange" placeholder="Denver, CO address" />
                   </div>
                 </div>
                 <div className="mt-4">
