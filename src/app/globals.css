@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-fiesta-red: #E63946;
+  --color-fiesta-orange: #F77F00;
+  --color-fiesta-yellow: #FCBF49;
+  --color-fiesta-green: #2A9D8F;
+  --color-fiesta-teal: #264653;
+  --color-fiesta-pink: #E91E8C;
+  --color-fiesta-purple: #7B2D8E;
+  --color-fiesta-gold: #D4A017;
+  --color-fiesta-cream: #FFF8F0;
+  --color-fiesta-warm: #FFF0E0;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: #FFF8F0;
+  color: #264653;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fiesta gradient backgrounds */
+.fiesta-gradient {
+  background: linear-gradient(135deg, #E63946 0%, #F77F00 25%, #FCBF49 50%, #2A9D8F 75%, #7B2D8E 100%);
+}
+
+.fiesta-gradient-warm {
+  background: linear-gradient(135deg, #E63946 0%, #F77F00 50%, #FCBF49 100%);
+}
+
+.fiesta-gradient-text {
+  background: linear-gradient(135deg, #E63946, #F77F00, #E91E8C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Confetti animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* WhatsApp button pulse */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-pulse {
+  animation: pulse-green 2s ease-in-out infinite;
+}
