@@ -83,11 +83,11 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-30"
+            className="object-cover opacity-55"
           />
         </div>
         {/* Soft light overlay so text stays legible */}
-        <div className="absolute inset-0 bg-gradient-to-b from-fiesta-cream/80 via-fiesta-cream/55 to-fiesta-cream/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-fiesta-cream/60 via-fiesta-cream/30 to-fiesta-cream/65" />
         {/* Floating party emojis */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-10 left-10 text-8xl animate-float">🎈</div>
