@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo, useRef } from "react";
 import type { FormEvent } from "react";
+import Image from "next/image";
 import { downloadWaiver } from "@/components/WaiverDocument";
 import type { WaiverData } from "@/components/WaiverDocument";
 
@@ -526,6 +527,46 @@ export default function BookPage() {
                 We&apos;ll confirm within 24 hours / Confirmaremos dentro de 24 horas
               </p>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment — Cash App */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-fiesta-cream rounded-3xl p-8 md:p-10 shadow-md border border-fiesta-yellow/20 text-center">
+            <h2 className="text-3xl font-extrabold text-fiesta-teal mb-2">
+              Pay With Cash App 💵
+            </h2>
+            <p className="text-fiesta-teal/70 mb-8">
+              Paga con Cash App — rápido y fácil
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+              <div className="relative w-48 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg bg-black">
+                <Image
+                  src="/cash-app-qr.jpg"
+                  alt="Cash App QR code for $JordyO2837 (Jordy Ortiz)"
+                  fill
+                  sizes="192px"
+                  className="object-contain"
+                />
+              </div>
+              <div className="text-left">
+                <p className="text-sm text-fiesta-teal/70 mb-1">Scan the code or tap below:</p>
+                <p className="text-sm text-fiesta-teal/50 mb-4">Escanea el código o toca abajo:</p>
+                <a
+                  href="https://cash.app/$JordyO2837"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-lg transition-colors shadow-md"
+                >
+                  $JordyO2837
+                </a>
+                <p className="text-xs text-fiesta-teal/50 mt-4">
+                  Payments to Jordy Ortiz
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

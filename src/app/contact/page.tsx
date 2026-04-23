@@ -168,6 +168,13 @@ export default function ContactPage() {
                       <p className="text-sm text-fiesta-teal/60">Chat with us / Chatea con nosotros</p>
                     </div>
                   </a>
+                  <a href="https://cash.app/$JordyO2837" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-green-50 rounded-xl hover:bg-green-100 transition-colors">
+                    <span className="text-3xl">💵</span>
+                    <div>
+                      <p className="font-bold text-fiesta-teal">$JordyO2837</p>
+                      <p className="text-sm text-fiesta-teal/60">Pay with Cash App / Pagar con Cash App</p>
+                    </div>
+                  </a>
                 </div>
               </div>
 
