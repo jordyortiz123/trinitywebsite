@@ -154,7 +154,7 @@ export default function ContactPage() {
                       <p className="text-sm text-fiesta-teal/60">Follow us on Instagram / Síguenos en Instagram</p>
                     </div>
                   </a>
-                  <a href="https://www.facebook.com/share/17dBzpJugc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-fiesta-cream rounded-xl hover:bg-blue-50 transition-colors">
+                  <a href="https://www.facebook.com/amy.castillo.1293" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-fiesta-cream rounded-xl hover:bg-blue-50 transition-colors">
                     <span className="text-3xl">👍</span>
                     <div>
                       <p className="font-bold text-fiesta-teal">Amy Castillo</p>

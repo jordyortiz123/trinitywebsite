@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const featuredRentals = [
   {
@@ -116,6 +117,22 @@ export default function Home() {
               <span>✓ Same-Day Available</span>
               <span>✓ Bilingual Service</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured photo */}
+      <section className="bg-fiesta-cream pt-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src="/gallery/bounce-house-castle.jpg"
+              alt="Colorful balloon-turret castle bounce house ready for a Denver party"
+              fill
+              sizes="(min-width: 1024px) 960px, 100vw"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>

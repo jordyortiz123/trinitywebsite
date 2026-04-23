@@ -124,7 +124,7 @@ export default function GalleryPage() {
                 Instagram
               </a>
               <a
-                href="https://www.facebook.com/share/17dBzpJugc/?mibextid=wwXIfr"
+                href="https://www.facebook.com/amy.castillo.1293"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition-colors"
