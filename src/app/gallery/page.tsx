@@ -1,20 +1,37 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Gallery | Fiesta Fun Familia with Trinity | Denver Party Rentals",
   description: "See our bouncy castles, water slides, and party setups in action! Gallery of events across Denver, CO.",
 };
 
-const placeholderImages = [
-  { bg: "from-fiesta-red to-fiesta-orange", icon: "🏰", label: "Bouncy Castle Setup" },
-  { bg: "from-fiesta-orange to-fiesta-yellow", icon: "🌊", label: "Water Slide Fun" },
-  { bg: "from-fiesta-green to-fiesta-teal", icon: "🎂", label: "Birthday Party" },
-  { bg: "from-fiesta-pink to-fiesta-purple", icon: "🪅", label: "Quinceañera" },
-  { bg: "from-fiesta-yellow to-fiesta-orange", icon: "🍭", label: "Cotton Candy Station" },
-  { bg: "from-fiesta-teal to-fiesta-green", icon: "🎵", label: "Party Setup" },
-  { bg: "from-fiesta-purple to-fiesta-red", icon: "🎈", label: "Kids Having Fun" },
-  { bg: "from-fiesta-orange to-fiesta-red", icon: "🪑", label: "Table & Chair Setup" },
-  { bg: "from-fiesta-green to-fiesta-yellow", icon: "🎉", label: "Event Overview" },
+const photos = [
+  {
+    src: "/gallery/bounce-house-castle.jpg",
+    alt: "Colorful balloon-turret castle bounce house",
+    label: "Balloon Castle Bounce House",
+  },
+  {
+    src: "/gallery/bounce-house-castle-angle.jpg",
+    alt: "Castle bounce house with slide, side view",
+    label: "Castle Bounce House",
+  },
+  {
+    src: "/gallery/bounce-house-green.jpg",
+    alt: "Green, red, and yellow combo bounce house with slide",
+    label: "Combo Bounce House",
+  },
+  {
+    src: "/gallery/bounce-house-interior.jpg",
+    alt: "Inside view of a colorful bounce house",
+    label: "Inside the Fun!",
+  },
+];
+
+const videos = [
+  { src: "/gallery/party-video-1.mp4", label: "Party Highlights" },
+  { src: "/gallery/party-video-2.mp4", label: "Kids Having a Blast" },
 ];
 
 export default function GalleryPage() {
@@ -48,24 +65,54 @@ export default function GalleryPage() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {placeholderImages.map((img, index) => (
-              <div
-                key={index}
-                className={`aspect-square bg-gradient-to-br ${img.bg} rounded-2xl flex flex-col items-center justify-center text-white shadow-md hover:shadow-xl transition-all hover:scale-[1.02] cursor-pointer`}
+            {photos.map((photo) => (
+              <figure
+                key={photo.src}
+                className="group relative aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:scale-[1.02] bg-fiesta-teal/10"
               >
-                <span className="text-6xl mb-3">{img.icon}</span>
-                <span className="font-bold text-lg">{img.label}</span>
-                <span className="text-white/60 text-sm mt-1">Photo coming soon</span>
-              </div>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent text-white font-bold text-lg px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {photo.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <h2 className="text-3xl font-extrabold text-fiesta-teal text-center mt-16 mb-8">
+            Watch the Fun! / ¡Mira la Diversión!
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {videos.map((video) => (
+              <figure
+                key={video.src}
+                className="rounded-2xl overflow-hidden shadow-md bg-black"
+              >
+                <video
+                  src={video.src}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full aspect-video"
+                />
+                <figcaption className="bg-white text-fiesta-teal font-bold px-4 py-3 text-center">
+                  {video.label}
+                </figcaption>
+              </figure>
             ))}
           </div>
 
           <div className="text-center mt-12 bg-white rounded-2xl p-8 shadow-md border border-fiesta-yellow/20 max-w-lg mx-auto">
             <div className="text-5xl mb-4">📸</div>
-            <h3 className="text-xl font-bold text-fiesta-teal mb-2">More Photos Coming Soon!</h3>
-            <p className="text-fiesta-teal/60 mb-1">¡Más fotos próximamente!</p>
+            <h3 className="text-xl font-bold text-fiesta-teal mb-2">Follow For More!</h3>
+            <p className="text-fiesta-teal/60 mb-1">¡Síguenos para más!</p>
             <p className="text-fiesta-teal/60 text-sm mb-4">
-              Follow us on social media for the latest event photos.
+              Check our social media for the latest event photos.
             </p>
             <div className="flex gap-4 justify-center">
               <a
@@ -77,7 +124,7 @@ export default function GalleryPage() {
                 Instagram
               </a>
               <a
-                href="https://facebook.com/jordy.ortiz"
+                href="https://www.facebook.com/share/17dBzpJugc/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition-colors"

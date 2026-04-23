@@ -70,7 +70,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://facebook.com/jordy.ortiz"
+                href="https://www.facebook.com/share/17dBzpJugc/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"

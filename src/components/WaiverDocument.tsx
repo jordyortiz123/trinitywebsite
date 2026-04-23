@@ -70,7 +70,7 @@ export function generateWaiverHTML(data: WaiverData): string {
   <div class="company">FIESTA FUN FAMILIA WITH TRINITY</div>
   <div class="sub">Party Rental Services — Denver, Colorado</div>
   <div class="sub">Phone: (303) 295-3886 | Email: jordyo3728@gmail.com</div>
-  <div class="sub">Instagram: @jordy37 | Facebook: Jordy Ortiz</div>
+  <div class="sub">Instagram: @jordy37 | Facebook: Amy Castillo</div>
 </div>
 
 <h1>RENTAL AGREEMENT, LIABILITY WAIVER<br>& ASSUMPTION OF RISK</h1>
@@ -249,7 +249,7 @@ export function generateWaiverHTML(data: WaiverData): string {
 
 <div class="footer">
   <p><strong>FIESTA FUN FAMILIA WITH TRINITY</strong> — Denver, Colorado</p>
-  <p>Phone: (303) 295-3886 | Email: jordyo3728@gmail.com | Instagram: @jordy37 | Facebook: Jordy Ortiz</p>
+  <p>Phone: (303) 295-3886 | Email: jordyo3728@gmail.com | Instagram: @jordy37 | Facebook: Amy Castillo</p>
   <p>This document was generated on ${data.signatureDate} and constitutes a legally binding agreement.</p>
   <p>Please retain a copy of this document for your records.</p>
 </div>
