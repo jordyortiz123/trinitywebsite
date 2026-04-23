@@ -73,9 +73,23 @@ const testimonials = [
 export default function Home() {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-fiesta-orange via-fiesta-red to-fiesta-pink text-white">
-        <div className="absolute inset-0 opacity-10">
+      {/* Hero Section — light bg with animated bounce-house backdrop */}
+      <section className="relative overflow-hidden bg-fiesta-cream text-fiesta-teal">
+        {/* Bounce-house background, muted and slowly panning */}
+        <div className="absolute inset-0 animate-ken-burns">
+          <Image
+            src="/gallery/bounce-house-castle.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-30"
+          />
+        </div>
+        {/* Soft light overlay so text stays legible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-fiesta-cream/80 via-fiesta-cream/55 to-fiesta-cream/85" />
+        {/* Floating party emojis */}
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
           <div className="absolute top-10 left-10 text-8xl animate-float">🎈</div>
           <div className="absolute top-20 right-20 text-7xl animate-float" style={{ animationDelay: "1s" }}>🎉</div>
           <div className="absolute bottom-20 left-1/4 text-6xl animate-float" style={{ animationDelay: "2s" }}>🎊</div>
@@ -83,16 +97,16 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl font-medium text-white/90 mb-4">
+            <p className="text-lg md:text-xl font-semibold text-fiesta-teal/80 mb-4">
               🎪 Denver&apos;s #1 Party Rental Service | El Mejor Servicio de Fiestas en Denver
             </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
-              Make Every <span className="text-fiesta-yellow">Fiesta</span> Unforgettable!
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-fiesta-teal drop-shadow-sm">
+              Make Every <span className="text-fiesta-orange">Fiesta</span> Unforgettable!
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-4">
+            <p className="text-xl md:text-2xl text-fiesta-red font-bold mb-4">
               ¡Haz cada fiesta inolvidable!
             </p>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-fiesta-teal/80 mb-8 max-w-2xl mx-auto">
               Bouncy castles, water slides, cotton candy machines & more.
               Serving all of Denver — from birthday parties to quinceañeras,
               Día del Niño to Diwali celebrations!
@@ -100,18 +114,18 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/book"
-                className="bg-white text-fiesta-red hover:bg-fiesta-yellow hover:text-fiesta-teal px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+                className="bg-fiesta-red text-white hover:bg-fiesta-orange px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 Book Now / ¡Reservar Ahora! 🎉
               </Link>
               <Link
                 href="/rentals"
-                className="border-2 border-white text-white hover:bg-white hover:text-fiesta-red px-8 py-4 rounded-full font-bold text-lg transition-all"
+                className="border-2 border-fiesta-teal text-fiesta-teal hover:bg-fiesta-teal hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all bg-white/60"
               >
                 View Rentals / Ver Alquileres
               </Link>
             </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/80">
+            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium text-fiesta-teal/70">
               <span>✓ Free Delivery in Denver</span>
               <span>✓ Entrega Gratis en Denver</span>
               <span>✓ Same-Day Available</span>

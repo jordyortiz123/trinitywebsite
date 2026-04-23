@@ -56,6 +56,18 @@ body {
   animation: bounce-slow 3s ease-in-out infinite;
 }
 
+/* Slow ken-burns pan/zoom for hero background images */
+@keyframes ken-burns {
+  0%   { transform: scale(1.0) translate3d(0, 0, 0); }
+  50%  { transform: scale(1.1) translate3d(-2%, -1%, 0); }
+  100% { transform: scale(1.0) translate3d(0, 0, 0); }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
