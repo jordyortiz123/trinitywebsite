@@ -143,6 +143,39 @@ export default function BookPage() {
             )}
           </div>
 
+          {/* Pay Deposit — Cash App */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border-2 border-green-400 mb-6 text-left">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">💵</span>
+              <div>
+                <h3 className="font-bold text-fiesta-teal">Pay Your Deposit</h3>
+                <p className="text-sm text-green-600 font-semibold">Cash App · $JordyO2837</p>
+              </div>
+            </div>
+            <p className="text-sm text-fiesta-teal/70 mb-4">
+              Secure your booking faster by sending the deposit now. / Asegura tu reserva enviando el depósito ahora.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="relative w-32 aspect-[3/4] rounded-xl overflow-hidden shadow bg-black shrink-0">
+                <Image
+                  src="/cash-app-qr.jpg"
+                  alt="Cash App QR code for $JordyO2837"
+                  fill
+                  sizes="128px"
+                  className="object-contain"
+                />
+              </div>
+              <a
+                href="https://cash.app/$JordyO2837"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold transition-colors shadow-md"
+              >
+                Open Cash App → $JordyO2837
+              </a>
+            </div>
+          </div>
+
           <a
             href="tel:303-295-3886"
             className="inline-block bg-fiesta-orange text-white px-6 py-3 rounded-full font-bold hover:bg-fiesta-red transition-colors"

@@ -307,7 +307,18 @@ export default function Home() {
             >
               📞 Call 303-295-3886
             </a>
+            <a
+              href="https://cash.app/$JordyO2837"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl"
+            >
+              💵 Pay $JordyO2837
+            </a>
           </div>
+          <p className="text-sm text-white/80 mt-4">
+            Cash App: <span className="font-bold">$JordyO2837</span> · Pay by card, cash, or Cash App
+          </p>
         </div>
       </section>
     </div>
