@@ -137,6 +137,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured video */}
+      <section className="bg-fiesta-cream pt-10 pb-4">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-fiesta-teal">
+              See the Fiesta in Action 🎥
+            </h2>
+            <p className="text-fiesta-teal/60 mt-1">¡Mira la Fiesta en Acción!</p>
+          </div>
+          <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black">
+            <video
+              src="/gallery/party-video-1.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Featured Rentals */}
       <section className="py-20 bg-fiesta-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
