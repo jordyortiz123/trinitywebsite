@@ -16,7 +16,7 @@ const featuredRentals = [
     titleEs: "Toboganes de Agua",
     desc: "Beat the Colorado heat with our amazing water slides! Min 4 hours.",
     descEs: "¡Vence el calor de Colorado con nuestros increíbles toboganes! Mín 4 horas.",
-    price: "$150/day",
+    price: "$250/day",
   },
   {
     icon: "🪑",
