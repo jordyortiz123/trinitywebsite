@@ -41,7 +41,7 @@ const tiers = [
     popular: true,
     features: [
       { en: "1 Large Bouncy Castle (4 hours)", es: "1 Brincolín Grande (4 horas)", detail: "$50/hr x 4hrs = $200" },
-      { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$150/day" },
+      { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$250/day" },
       { en: "5 Tables", es: "5 Mesas", detail: "Included" },
       { en: "10 Chairs", es: "10 Sillas", detail: "Included" },
       { en: "Free delivery in Denver", es: "Entrega gratis en Denver", detail: "Included" },
@@ -66,7 +66,7 @@ const tiers = [
     popular: false,
     features: [
       { en: "2 Bouncy Castles — 1 Small + 1 Large (4 hours)", es: "2 Brincolines — 1 Pequeño + 1 Grande (4 horas)", detail: "$25/hr + $50/hr x 4hrs = $300" },
-      { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$150/day" },
+      { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$250/day" },
       { en: "10 Tables", es: "10 Mesas", detail: "Included" },
       { en: "20+ Chairs", es: "20+ Sillas", detail: "Included" },
       { en: "Cotton Candy Machine + 4 Flavors", es: "Máquina de Algodón + 4 Sabores", detail: "$50 machine + $50 flavors = $100" },
