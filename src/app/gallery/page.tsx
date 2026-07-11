@@ -32,19 +32,19 @@ const photos = [
     fit: "cover",
   },
   {
-    src: "/gallery/photo-113233.jpg",
+    src: "/gallery/speaker-on-stand.jpg",
     alt: "Pioneer all-in-one party speaker with RGB lights on a telescopic stand",
     label: "Party Speaker & Light Show",
     fit: "contain",
   },
   {
-    src: "/gallery/photo-113237.jpg",
+    src: "/gallery/speaker-box.jpg",
     alt: "Pioneer 700W all-in-one party speaker with wireless microphone and telescopic stand",
     label: "700W Speaker + Wireless Mic",
     fit: "contain",
   },
   {
-    src: "/gallery/photo-113539.jpg",
+    src: "/gallery/speaker-on-stand-2.jpg",
     alt: "Pioneer all-in-one party speaker with RGB lights on a telescopic stand",
     label: "Party Speaker & Light Show",
     fit: "contain",

@@ -216,7 +216,7 @@ export default function Home() {
           <figure className="rounded-3xl overflow-hidden shadow-xl bg-fiesta-teal/10 mt-6 max-w-2xl mx-auto">
             <div className="relative w-full aspect-video">
               <Image
-                src="/gallery/photo-113233.jpg"
+                src="/gallery/speaker-on-stand.jpg"
                 alt="Pioneer all-in-one party speaker with RGB lights on a telescopic stand"
                 fill
                 sizes="(min-width: 640px) 640px, 100vw"
