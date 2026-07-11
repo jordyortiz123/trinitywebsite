@@ -11,26 +11,43 @@ const photos = [
     src: "/gallery/bounce-house-castle.jpg",
     alt: "Colorful balloon-turret castle bounce house",
     label: "Balloon Castle Bounce House",
+    fit: "cover",
   },
   {
     src: "/gallery/bounce-house-castle-angle.jpg",
     alt: "Castle bounce house with slide, side view",
     label: "Castle Bounce House",
+    fit: "cover",
   },
   {
     src: "/gallery/bounce-house-green.jpg",
     alt: "Green, red, and yellow combo bounce house with slide",
     label: "Combo Bounce House",
+    fit: "cover",
   },
   {
     src: "/gallery/bounce-house-interior.jpg",
     alt: "Inside view of a colorful bounce house",
     label: "Inside the Fun!",
+    fit: "cover",
   },
   {
-    src: "/gallery/jbl-partybox-mic.jpg",
+    src: "/gallery/photo-113233.jpg",
     alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
     label: "Sound System + Wireless Mic",
+    fit: "contain",
+  },
+  {
+    src: "/gallery/photo-113237.jpg",
+    alt: "Wireless sound system with Bluetooth and Miracast support",
+    label: "Wireless & Bluetooth Ready",
+    fit: "contain",
+  },
+  {
+    src: "/gallery/photo-113539.jpg",
+    alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
+    label: "Sound System + Wireless Mic",
+    fit: "contain",
   },
 ];
 
@@ -82,7 +99,7 @@ export default function GalleryPage() {
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
+                  className={photo.fit === "contain" ? "object-contain" : "object-cover"}
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent text-white font-bold text-lg px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity">
                   {photo.label}

@@ -216,7 +216,7 @@ export default function Home() {
           <figure className="rounded-3xl overflow-hidden shadow-xl bg-fiesta-teal/10 mt-6 max-w-2xl mx-auto">
             <div className="relative w-full aspect-video">
               <Image
-                src="/gallery/jbl-partybox-mic.jpg"
+                src="/gallery/photo-113233.jpg"
                 alt="JBL PartyBox Club 120 speaker with wireless microphone add-on"
                 fill
                 sizes="(min-width: 640px) 640px, 100vw"
