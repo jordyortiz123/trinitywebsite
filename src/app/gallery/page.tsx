@@ -32,11 +32,6 @@ const photos = [
     alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
     label: "Sound System + Wireless Mic",
   },
-  {
-    src: "/gallery/wireless-sound-system.jpg",
-    alt: "Wireless sound system with Bluetooth and Miracast support",
-    label: "Wireless & Bluetooth Ready",
-  },
 ];
 
 const videos = [

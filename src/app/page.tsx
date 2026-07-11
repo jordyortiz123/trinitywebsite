@@ -212,39 +212,21 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Sound system photos */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-            {[
-              {
-                src: "/gallery/jbl-partybox-mic.jpg",
-                alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
-                label: "Sound System + Wireless Mic",
-              },
-              {
-                src: "/gallery/wireless-sound-system.jpg",
-                alt: "Wireless sound system with Bluetooth and Miracast support",
-                label: "Wireless & Bluetooth Ready",
-              },
-            ].map((p) => (
-              <figure
-                key={p.src}
-                className="rounded-3xl overflow-hidden shadow-xl bg-fiesta-teal/10"
-              >
-                <div className="relative w-full aspect-video">
-                  <Image
-                    src={p.src}
-                    alt={p.alt}
-                    fill
-                    sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="bg-white text-fiesta-teal font-bold px-4 py-3 text-center text-sm">
-                  {p.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          {/* Sound system photo */}
+          <figure className="rounded-3xl overflow-hidden shadow-xl bg-fiesta-teal/10 mt-6 max-w-2xl mx-auto">
+            <div className="relative w-full aspect-video">
+              <Image
+                src="/gallery/jbl-partybox-mic.jpg"
+                alt="JBL PartyBox Club 120 speaker with wireless microphone add-on"
+                fill
+                sizes="(min-width: 640px) 640px, 100vw"
+                className="object-contain bg-black"
+              />
+            </div>
+            <figcaption className="bg-white text-fiesta-teal font-bold px-4 py-3 text-center text-sm">
+              Sound System + Wireless Mic
+            </figcaption>
+          </figure>
 
           <div className="text-center mt-8">
             <Link
