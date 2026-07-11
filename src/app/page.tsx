@@ -175,6 +175,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fresh from our latest party — new water slide videos + sound system */}
+      <section className="bg-fiesta-cream pt-12 pb-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-fiesta-teal">
+              Fresh From Our Latest Party 🌊
+            </h2>
+            <p className="text-fiesta-teal/60 mt-1">¡De Nuestra Fiesta Más Reciente!</p>
+          </div>
+
+          {/* Water slide videos (portrait) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {[
+              { src: "/gallery/water-slide-tropical.mp4", label: "Tropical Water Slide" },
+              { src: "/gallery/water-slide-kids.mp4", label: "Splashing Down the Slide" },
+            ].map((v) => (
+              <figure
+                key={v.src}
+                className="rounded-3xl overflow-hidden shadow-2xl bg-black"
+              >
+                <video
+                  src={v.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  className="w-full aspect-[9/16] object-cover"
+                />
+                <figcaption className="bg-white text-fiesta-teal font-bold px-4 py-3 text-center text-sm">
+                  {v.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          {/* Sound system photos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+            {[
+              {
+                src: "/gallery/jbl-partybox-mic.jpg",
+                alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
+                label: "Sound System + Wireless Mic",
+              },
+              {
+                src: "/gallery/wireless-sound-system.jpg",
+                alt: "Wireless sound system with Bluetooth and Miracast support",
+                label: "Wireless & Bluetooth Ready",
+              },
+            ].map((p) => (
+              <figure
+                key={p.src}
+                className="rounded-3xl overflow-hidden shadow-xl bg-fiesta-teal/10"
+              >
+                <div className="relative w-full aspect-video">
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="bg-white text-fiesta-teal font-bold px-4 py-3 text-center text-sm">
+                  {p.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/gallery"
+              className="inline-block bg-fiesta-teal hover:bg-fiesta-green text-white px-8 py-3 rounded-full font-bold transition-colors"
+            >
+              See the Full Gallery / Ver Galería →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Rentals */}
       <section className="py-20 bg-fiesta-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
