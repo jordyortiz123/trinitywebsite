@@ -27,11 +27,23 @@ const photos = [
     alt: "Inside view of a colorful bounce house",
     label: "Inside the Fun!",
   },
+  {
+    src: "/gallery/jbl-partybox-mic.jpg",
+    alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
+    label: "Sound System + Wireless Mic",
+  },
+  {
+    src: "/gallery/wireless-sound-system.jpg",
+    alt: "Wireless sound system with Bluetooth and Miracast support",
+    label: "Wireless & Bluetooth Ready",
+  },
 ];
 
 const videos = [
   { src: "/gallery/party-video-1.mp4", label: "Party Highlights" },
   { src: "/gallery/party-video-2.mp4", label: "Kids Having a Blast" },
+  { src: "/gallery/water-slide-tropical.mp4", label: "Tropical Water Slide" },
+  { src: "/gallery/water-slide-kids.mp4", label: "Splashing Down the Slide" },
 ];
 
 export default function GalleryPage() {
