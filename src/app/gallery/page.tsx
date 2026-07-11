@@ -33,20 +33,20 @@ const photos = [
   },
   {
     src: "/gallery/photo-113233.jpg",
-    alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
-    label: "Sound System + Wireless Mic",
+    alt: "Pioneer all-in-one party speaker with RGB lights on a telescopic stand",
+    label: "Party Speaker & Light Show",
     fit: "contain",
   },
   {
     src: "/gallery/photo-113237.jpg",
-    alt: "Wireless sound system with Bluetooth and Miracast support",
-    label: "Wireless & Bluetooth Ready",
+    alt: "Pioneer 700W all-in-one party speaker with wireless microphone and telescopic stand",
+    label: "700W Speaker + Wireless Mic",
     fit: "contain",
   },
   {
     src: "/gallery/photo-113539.jpg",
-    alt: "JBL PartyBox Club 120 speaker with wireless microphone add-on",
-    label: "Sound System + Wireless Mic",
+    alt: "Pioneer all-in-one party speaker with RGB lights on a telescopic stand",
+    label: "Party Speaker & Light Show",
     fit: "contain",
   },
 ];

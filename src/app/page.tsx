@@ -217,7 +217,7 @@ export default function Home() {
             <div className="relative w-full aspect-video">
               <Image
                 src="/gallery/photo-113233.jpg"
-                alt="JBL PartyBox Club 120 speaker with wireless microphone add-on"
+                alt="Pioneer all-in-one party speaker with RGB lights on a telescopic stand"
                 fill
                 sizes="(min-width: 640px) 640px, 100vw"
                 className="object-contain bg-black"
