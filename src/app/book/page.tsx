@@ -6,9 +6,9 @@ import { downloadWaiver } from "@/components/WaiverDocument";
 import type { WaiverData } from "@/components/WaiverDocument";
 
 const packages = [
-  { id: "basic", label: "Fiesta Basic", price: "$125+" },
+  { id: "basic", label: "Fiesta Basic", price: "$200+" },
   { id: "plus", label: "Fiesta Plus", price: "$400+" },
-  { id: "pro", label: "Fiesta Pro", price: "$750+" },
+  { id: "pro", label: "Fiesta Pro", price: "$800+" },
   { id: "custom", label: "Custom / Personalizado", price: "Quote" },
 ];
 
@@ -18,24 +18,23 @@ function getRecommendation(kidCount: number) {
     return {
       package: "Fiesta Basic",
       items: [
-        "1 Small Bouncy Castle (4 hrs)",
+        "1 Small Bouncy Castle (full day, min 4 hrs)",
         "2 Tables",
-        `${Math.max(kidCount, 4)} Chairs`,
+        `${Math.max(kidCount, 6)} Chairs`,
       ],
       note: "Perfect for a small, intimate party!",
       noteEs: "¡Perfecto para una fiesta pequeña e íntima!",
-      estimate: "$125+",
+      estimate: "$200+",
     };
   }
   if (kidCount <= 20) {
     return {
       package: "Fiesta Plus",
       items: [
-        "1 Large Bouncy Castle (4 hrs)",
+        "1 Large Bouncy Castle (full day, min 4 hrs)",
         "1 Water Slide (full day, min 4hrs)",
         `${Math.min(Math.ceil(kidCount / 4), 10)} Tables`,
         `${Math.min(kidCount + 5, 20)} Chairs`,
-        "Optional: Cotton Candy Machine (+$50-$100)",
       ],
       note: "Great for birthday parties & celebrations!",
       noteEs: "¡Ideal para cumpleaños y celebraciones!",
@@ -45,17 +44,15 @@ function getRecommendation(kidCount: number) {
   return {
     package: "Fiesta Pro",
     items: [
-      "2 Bouncy Castles — Small + Large (4 hrs)",
+      "1 Small Bouncy Castle (full day, min 4 hrs)",
       "1 Water Slide (full day, min 4hrs)",
       `${Math.min(Math.ceil(kidCount / 3), 10)} Tables`,
       `${Math.min(kidCount + 10, 30)}+ Chairs`,
-      "Cotton Candy Machine + 4 Flavors",
-      "Photo Booth with props & backdrop",
       "Portable Sound System",
     ],
     note: "The ultimate party for a big group!",
     noteEs: "¡La fiesta definitiva para un grupo grande!",
-    estimate: "$750+",
+    estimate: "$800+",
   };
 }
 
@@ -421,30 +418,28 @@ export default function BookPage() {
                         <ul className="space-y-1.5 text-sm text-fiesta-teal/80">
                           {selectedPackage === "basic" && (
                             <>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Small Bouncy Castle (4 hours) — $25/hr</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Small Bouncy Castle (full day, min 4 hrs) — $125/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 2 Tables</li>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 4 Chairs</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 6 Chairs</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Free delivery & setup in Denver</li>
                             </>
                           )}
                           {selectedPackage === "plus" && (
                             <>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Large Bouncy Castle (4 hours) — $50/hr</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Large Bouncy Castle (full day, min 4 hrs) — $225/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $150/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 5 Tables</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 10 Chairs</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Free delivery & setup in Denver</li>
-                              <li className="flex items-center gap-2 text-fiesta-teal/50"><span>+</span> Add Cotton Candy ($50-$100)</li>
-                              <li className="flex items-center gap-2 text-fiesta-teal/50"><span>+</span> Add Photo Booth (ask for quote)</li>
+                              <li className="flex items-center gap-2 text-fiesta-teal/50"><span>—</span> Cotton Candy Machine (coming soon)</li>
+                              <li className="flex items-center gap-2 text-fiesta-teal/50"><span>—</span> Photo Booth (coming soon)</li>
                             </>
                           )}
                           {selectedPackage === "pro" && (
                             <>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 2 Bouncy Castles — Small ($25/hr) + Large ($50/hr) — 4 hours</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Small Bouncy Castle (full day, min 4 hrs) — $125/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $150/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 10 Tables + 20+ Chairs</li>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Cotton Candy Machine + 4 Flavors</li>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Photo Booth with props & backdrop</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Portable Sound System</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Free delivery & setup in Denver</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Priority booking</li>
@@ -460,14 +455,11 @@ export default function BookPage() {
                 {bookingType === "individual" && (
                   <div className="space-y-2">
                     {[
-                      { id: "bouncy-small", label: "Bouncy Castle (Small) / Brincolín (Pequeño)", price: "$25/hr" },
-                      { id: "bouncy-large", label: "Bouncy Castle (Large) / Brincolín (Grande)", price: "$50/hr" },
+                      { id: "bouncy-small", label: "Bouncy Castle (Small) / Brincolín (Pequeño)", price: "$125/day" },
+                      { id: "bouncy-large", label: "Bouncy Castle (Large) / Brincolín (Grande)", price: "$225/day" },
                       { id: "waterslide", label: "Water Slide / Tobogán de Agua", price: "$150/day" },
                       { id: "tables", label: "Tables / Mesas", price: "Quote" },
                       { id: "chairs", label: "Chairs / Sillas", price: "Quote" },
-                      { id: "cottoncandy-machine", label: "Cotton Candy Machine Only / Solo Máquina", price: "$50/day" },
-                      { id: "cottoncandy-flavors", label: "Cotton Candy Flavor Kit (4 flavors) / Kit de Sabores", price: "+$50" },
-                      { id: "photobooth", label: "Photo Booth / Cabina de Fotos", price: "Quote" },
                       { id: "speakers", label: "Sound System / Sistema de Sonido", price: "Quote" },
                     ].map((item) => (
                       <label key={item.id} className="flex items-center justify-between p-3 bg-fiesta-cream rounded-xl cursor-pointer hover:bg-fiesta-yellow/20 transition-colors border border-transparent hover:border-fiesta-orange/20">
@@ -542,6 +534,19 @@ export default function BookPage() {
                     </span>
                   </span>
                 </label>
+              </div>
+
+              {/* Pricing Notice */}
+              <div className="bg-fiesta-cream border-2 border-fiesta-orange/40 rounded-2xl p-5 text-sm text-fiesta-teal/80 space-y-2">
+                <p className="font-bold text-fiesta-orange uppercase tracking-wide text-xs">Please Note / Aviso Importante</p>
+                <p>
+                  Prices may vary on holidays and weekends, and bundle pricing varies depending on the items included.
+                  <span className="block text-xs text-fiesta-teal/50">Los precios pueden variar en días festivos y fines de semana, y el precio de los paquetes varía según los artículos incluidos.</span>
+                </p>
+                <p>
+                  <strong className="text-fiesta-teal">A mandatory security deposit is required on all rentals</strong> — the amount is quoted at booking.
+                  <span className="block text-xs text-fiesta-teal/50">Se requiere un depósito de seguridad obligatorio en todas las rentas — el monto se cotiza al reservar.</span>
+                </p>
               </div>
 
               <button

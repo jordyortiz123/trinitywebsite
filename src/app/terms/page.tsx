@@ -47,12 +47,15 @@ export default function TermsPage() {
                 <h3 className="text-lg font-bold text-fiesta-teal mb-3">2. RENTAL INVENTORY, PERIODS & PRICING</h3>
                 <p className="mb-3">
                   All rentals are subject to availability and must be confirmed by the Company prior to the
-                  event date. Standard rental pricing is as follows and is subject to change without notice:
+                  event date. Standard rental pricing is as follows and is subject to change without notice.
+                  <strong> Prices may vary on holidays and weekends, and bundle pricing varies depending on the
+                  items included. A mandatory security deposit is required on all rentals; the deposit amount is
+                  quoted at the time of booking.</strong>
                 </p>
                 <div className="bg-fiesta-cream rounded-xl p-4 space-y-3">
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Bouncy Castles / Brincolines</p>
-                    <p>$25.00 per hour for the first 4 hours (small unit) | $50.00 per hour for the first 4 hours (large unit). Full-day rates available upon request. Two (2) units available.</p>
+                    <p>$125.00 per full day (small unit) | $225.00 per full day (large unit). All bouncy castle rentals are full-day rentals with a minimum rental period of four (4) hours; hourly rentals are not available. Two (2) units available.</p>
                   </div>
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Water Slides / Toboganes de Agua</p>
@@ -60,11 +63,11 @@ export default function TermsPage() {
                   </div>
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Cotton Candy Machine / Máquina de Algodón de Azúcar</p>
-                    <p>$50.00 per day for machine rental. Additional $50.00 for flavor kit (includes four (4) different flavors and supplies). Total with flavors: $100.00.</p>
+                    <p><strong>Coming soon.</strong> The cotton candy machine is not currently available for rental. Pricing will be published when the item becomes available.</p>
                   </div>
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Photo Booth / Cabina de Fotos</p>
-                    <p>Pricing available upon request. Includes backdrop, props, and digital copies. Additional prints available for purchase.</p>
+                    <p><strong>Coming soon.</strong> The photo booth is not currently available for rental. Pricing will be published when the item becomes available.</p>
                   </div>
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Tables & Chairs / Mesas y Sillas</p>
@@ -80,9 +83,9 @@ export default function TermsPage() {
               <div>
                 <h3 className="text-lg font-bold text-fiesta-teal mb-3">3. BOOKING, DEPOSIT & PAYMENT</h3>
                 <p>
-                  A non-refundable deposit may be required at the time of booking to secure the reservation.
-                  The deposit amount will be communicated at the time of booking and will be applied toward
-                  the total rental cost. The remaining balance is due in full on or before the date of the event,
+                  A mandatory, non-refundable security deposit is required at the time of booking on all rentals
+                  to secure the reservation. The deposit amount will be communicated at the time of booking and
+                  will be applied toward the total rental cost. The remaining balance is due in full on or before the date of the event,
                   prior to setup of equipment. The Company accepts cash, credit/debit cards, and other
                   electronic payment methods as communicated at the time of booking. A valid credit card
                   must be kept on file for the duration of the rental period to cover potential additional charges,

@@ -101,17 +101,17 @@ export function generateWaiverHTML(data: WaiverData): string {
 <p>All rentals are subject to availability and must be confirmed in writing by the Company. Current pricing is as follows (subject to change without prior notice):</p>
 
 <ol class="list">
-  <li><strong>Bouncy Castles (Brincolines):</strong> Small unit — $25.00 per hour for the first four (4) hours; Large unit — $50.00 per hour for the first four (4) hours. Full-day rates available upon request. Two (2) units available in total inventory.</li>
+  <li><strong>Bouncy Castles (Brincolines):</strong> Small unit — $125.00 per full day; Large unit — $225.00 per full day. All bouncy castle rentals are full-day rentals with a mandatory minimum rental period of four (4) hours; hourly rentals are not available. Two (2) units available in total inventory.</li>
   <li><strong>Water Slides (Toboganes de Agua):</strong> $150.00 per day with a mandatory minimum rental period of four (4) hours. Water slides are designated water equipment. Two (2) units available.</li>
-  <li><strong>Cotton Candy Machine (Máquina de Algodón de Azúcar):</strong> $50.00 per day for machine rental. Additional $50.00 for flavor supply kit (includes four (4) different flavors and all necessary supplies). Total with flavor kit: $100.00.</li>
-  <li><strong>Photo Booth (Cabina de Fotos):</strong> Pricing available upon request. Includes professional backdrop, assorted props, and digital copies of all photographs.</li>
+  <li><strong>Cotton Candy Machine (Máquina de Algodón de Azúcar):</strong> Coming soon. This item is not currently available for rental.</li>
+  <li><strong>Photo Booth (Cabina de Fotos):</strong> Coming soon. This item is not currently available for rental.</li>
   <li><strong>Tables & Chairs (Mesas y Sillas):</strong> Custom pricing based on quantity and duration. Five to ten (5–10) tables and ten or more (10+) chairs available. Additional inventory can be arranged with sufficient advance notice.</li>
   <li><strong>Portable Sound System (Sistema de Sonido Portátil):</strong> Custom pricing based on event duration and specific equipment requirements.</li>
 </ol>
 
 <h3>SECTION 4 — BOOKING, DEPOSIT & PAYMENT TERMS</h3>
 
-<p>A non-refundable deposit is required at the time of booking to secure the reservation date and equipment. The deposit amount shall be communicated at booking and applied toward the total rental cost. The remaining balance is due and payable in full on or before the event date, prior to equipment setup. The Company accepts cash, credit/debit cards, Venmo, Zelle, and other electronic payment methods. <strong>A valid credit or debit card must remain on file for the entire duration of the rental period</strong> to cover potential additional charges including, without limitation, cleaning fees, damage assessments, extended rental periods, and any other charges incurred under this Agreement. The Customer authorizes the Company to charge such card for any amounts owed under this Agreement.</p>
+<p>A mandatory, non-refundable security deposit is required at the time of booking on all rentals to secure the reservation date and equipment. Prices may vary on holidays and weekends, and bundle pricing varies depending on the items included. The deposit amount shall be communicated at booking and applied toward the total rental cost. The remaining balance is due and payable in full on or before the event date, prior to equipment setup. The Company accepts cash, credit/debit cards, Venmo, Zelle, and other electronic payment methods. <strong>A valid credit or debit card must remain on file for the entire duration of the rental period</strong> to cover potential additional charges including, without limitation, cleaning fees, damage assessments, extended rental periods, and any other charges incurred under this Agreement. The Customer authorizes the Company to charge such card for any amounts owed under this Agreement.</p>
 
 <h3>SECTION 5 — DELIVERY, SETUP, SITE REQUIREMENTS & REMOVAL</h3>
 

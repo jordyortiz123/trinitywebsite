@@ -8,23 +8,23 @@ const tiers = [
     nameEs: "Fiesta Básica",
     tagline: "Perfect for small gatherings",
     taglineEs: "Perfecto para reuniones pequeñas",
-    price: "$125",
+    price: "$200",
     priceNote: "starting at / desde",
     color: "fiesta-green",
     borderColor: "border-fiesta-green",
     bgColor: "bg-fiesta-green",
     popular: false,
     features: [
-      { en: "1 Small Bouncy Castle (4 hours)", es: "1 Brincolín Pequeño (4 horas)", detail: "$25/hr x 4hrs = $100" },
+      { en: "1 Small Bouncy Castle (full day, min 4 hrs)", es: "1 Brincolín Pequeño (día completo, mín 4 hrs)", detail: "$125/day" },
       { en: "2 Tables", es: "2 Mesas", detail: "Included" },
-      { en: "4 Chairs", es: "4 Sillas", detail: "Included" },
+      { en: "6 Chairs", es: "6 Sillas", detail: "Included" },
       { en: "Free delivery in Denver", es: "Entrega gratis en Denver", detail: "Included" },
       { en: "Setup & takedown included", es: "Instalación y desmontaje incluido", detail: "Included" },
     ],
     notIncluded: [
       { en: "Water Slide", es: "Tobogán de Agua" },
-      { en: "Cotton Candy Machine", es: "Máquina de Algodón" },
-      { en: "Photo Booth", es: "Cabina de Fotos" },
+      { en: "Cotton Candy Machine (coming soon)", es: "Máquina de Algodón (próximamente)" },
+      { en: "Photo Booth (coming soon)", es: "Cabina de Fotos (próximamente)" },
       { en: "Sound System", es: "Sistema de Sonido" },
     ],
   },
@@ -40,7 +40,7 @@ const tiers = [
     bgColor: "bg-fiesta-orange",
     popular: true,
     features: [
-      { en: "1 Large Bouncy Castle (4 hours)", es: "1 Brincolín Grande (4 horas)", detail: "$50/hr x 4hrs = $200" },
+      { en: "1 Large Bouncy Castle (full day, min 4 hrs)", es: "1 Brincolín Grande (día completo, mín 4 hrs)", detail: "$225/day" },
       { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$250/day" },
       { en: "5 Tables", es: "5 Mesas", detail: "Included" },
       { en: "10 Chairs", es: "10 Sillas", detail: "Included" },
@@ -48,8 +48,8 @@ const tiers = [
       { en: "Setup & takedown included", es: "Instalación y desmontaje incluido", detail: "Included" },
     ],
     notIncluded: [
-      { en: "Cotton Candy Machine (add $50+)", es: "Máquina de Algodón (añadir $50+)" },
-      { en: "Photo Booth (add-on available)", es: "Cabina de Fotos (disponible como extra)" },
+      { en: "Cotton Candy Machine (coming soon)", es: "Máquina de Algodón (próximamente)" },
+      { en: "Photo Booth (coming soon)", es: "Cabina de Fotos (próximamente)" },
       { en: "Sound System (add-on available)", es: "Sistema de Sonido (disponible como extra)" },
     ],
   },
@@ -58,25 +58,26 @@ const tiers = [
     nameEs: "Fiesta Pro",
     tagline: "The ultimate party experience!",
     taglineEs: "¡La experiencia definitiva de fiesta!",
-    price: "$750",
+    price: "$800",
     priceNote: "starting at / desde",
     color: "fiesta-red",
     borderColor: "border-fiesta-red",
     bgColor: "bg-fiesta-red",
     popular: false,
     features: [
-      { en: "2 Bouncy Castles — 1 Small + 1 Large (4 hours)", es: "2 Brincolines — 1 Pequeño + 1 Grande (4 horas)", detail: "$25/hr + $50/hr x 4hrs = $300" },
+      { en: "1 Small Bouncy Castle (full day, min 4 hrs)", es: "1 Brincolín Pequeño (día completo, mín 4 hrs)", detail: "$125/day" },
       { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$250/day" },
       { en: "10 Tables", es: "10 Mesas", detail: "Included" },
       { en: "20+ Chairs", es: "20+ Sillas", detail: "Included" },
-      { en: "Cotton Candy Machine + 4 Flavors", es: "Máquina de Algodón + 4 Sabores", detail: "$50 machine + $50 flavors = $100" },
-      { en: "Photo Booth with props & backdrop", es: "Cabina de Fotos con accesorios y fondo", detail: "Included" },
       { en: "Portable Sound System", es: "Sistema de Sonido portátil", detail: "Included" },
       { en: "Free delivery in Denver", es: "Entrega gratis en Denver", detail: "Included" },
       { en: "Setup & takedown included", es: "Instalación y desmontaje incluido", detail: "Included" },
       { en: "Priority booking", es: "Reserva prioritaria", detail: "Included" },
     ],
-    notIncluded: [],
+    notIncluded: [
+      { en: "Cotton Candy Machine (coming soon)", es: "Máquina de Algodón (próximamente)" },
+      { en: "Photo Booth (coming soon)", es: "Cabina de Fotos (próximamente)" },
+    ],
   },
 ];
 
@@ -85,16 +86,16 @@ const individualItems = [
     icon: "🏰",
     name: "Bouncy Castle (Small)",
     nameEs: "Brincolín (Pequeño)",
-    pricing: "$25/hour (first 4 hours) | Full day available",
-    pricingEs: "$25/hora (primeras 4 horas) | Día completo disponible",
+    pricing: "$125 full day (minimum 4 hours) — no hourly rentals",
+    pricingEs: "$125 día completo (mínimo 4 horas) — sin renta por hora",
     available: "1 available",
   },
   {
     icon: "🏰",
     name: "Bouncy Castle (Large)",
     nameEs: "Brincolín (Grande)",
-    pricing: "$50/hour (first 4 hours) | Full day available",
-    pricingEs: "$50/hora (primeras 4 horas) | Día completo disponible",
+    pricing: "$225 full day (minimum 4 hours) — no hourly rentals",
+    pricingEs: "$225 día completo (mínimo 4 horas) — sin renta por hora",
     available: "1 available",
   },
   {
@@ -125,17 +126,17 @@ const individualItems = [
     icon: "🍭",
     name: "Cotton Candy Machine",
     nameEs: "Máquina de Algodón de Azúcar",
-    pricing: "$50/day machine | +$50 for 4 flavor kit ($100 total)",
-    pricingEs: "$50/día máquina | +$50 por kit de 4 sabores ($100 total)",
-    available: "1 available",
+    pricing: "Coming soon",
+    pricingEs: "Próximamente",
+    available: "Coming soon",
   },
   {
     icon: "📸",
     name: "Photo Booth",
     nameEs: "Cabina de Fotos",
-    pricing: "Ask for quote — includes backdrop, props & digital copies",
-    pricingEs: "Solicitar cotización — incluye fondo, accesorios y copias digitales",
-    available: "Available",
+    pricing: "Coming soon",
+    pricingEs: "Próximamente",
+    available: "Coming soon",
   },
   {
     icon: "🔊",
@@ -255,6 +256,27 @@ export default function RentalsPage() {
             {tiers.map((tier) => (
               <TierCard key={tier.name} tier={tier} />
             ))}
+          </div>
+
+          {/* Pricing Notice */}
+          <div className="mt-12 max-w-3xl mx-auto bg-white border-2 border-fiesta-orange/40 rounded-2xl p-6 text-center shadow-sm">
+            <h3 className="text-lg font-extrabold text-fiesta-orange mb-3">
+              Please Note / Aviso Importante
+            </h3>
+            <ul className="space-y-2 text-sm text-fiesta-teal/80">
+              <li>
+                Prices may vary on holidays and weekends.
+                <span className="block text-xs text-fiesta-teal/50">Los precios pueden variar en días festivos y fines de semana.</span>
+              </li>
+              <li>
+                Bundle pricing varies depending on the items included.
+                <span className="block text-xs text-fiesta-teal/50">El precio de los paquetes varía según los artículos incluidos.</span>
+              </li>
+              <li>
+                <strong className="text-fiesta-teal">A mandatory security deposit is required on all rentals</strong> — amount quoted at booking.
+                <span className="block text-xs text-fiesta-teal/50">Se requiere un depósito de seguridad obligatorio en todas las rentas — el monto se cotiza al reservar.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
