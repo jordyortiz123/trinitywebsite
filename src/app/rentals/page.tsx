@@ -33,16 +33,16 @@ const tiers = [
     nameEs: "Fiesta Plus",
     tagline: "Most popular for birthday parties!",
     taglineEs: "¡El más popular para cumpleaños!",
-    price: "$400",
+    price: "$600",
     priceNote: "starting at / desde",
     color: "fiesta-orange",
     borderColor: "border-fiesta-orange",
     bgColor: "bg-fiesta-orange",
     popular: true,
     features: [
-      { en: "1 Large Bouncy Castle (full day, min 4 hrs)", es: "1 Brincolín Grande (día completo, mín 4 hrs)", detail: "$225/day" },
+      { en: "1 Small Bouncy Castle (full day, min 4 hrs)", es: "1 Brincolín Pequeño (día completo, mín 4 hrs)", detail: "$125/day" },
       { en: "1 Water Slide (full day, min 4hrs)", es: "1 Tobogán de Agua (día completo, mín 4hrs)", detail: "$250/day" },
-      { en: "5 Tables", es: "5 Mesas", detail: "Included" },
+      { en: "4 Tables", es: "4 Mesas", detail: "Included" },
       { en: "10 Chairs", es: "10 Sillas", detail: "Included" },
       { en: "Free delivery in Denver", es: "Entrega gratis en Denver", detail: "Included" },
       { en: "Setup & takedown included", es: "Instalación y desmontaje incluido", detail: "Included" },
@@ -171,6 +171,10 @@ function TierCard({ tier }: { tier: typeof tiers[0] }) {
         <div className="my-6">
           <span className="text-xs text-fiesta-teal/50 uppercase tracking-wide">{tier.priceNote}</span>
           <div className="text-5xl font-extrabold text-fiesta-teal">{tier.price}</div>
+          <p className="mt-2 text-xs text-fiesta-orange font-medium">
+            Prices may vary on holidays &amp; weekends
+            <span className="block text-fiesta-teal/50 font-normal">Los precios pueden variar en días festivos y fines de semana</span>
+          </p>
         </div>
 
         <Link

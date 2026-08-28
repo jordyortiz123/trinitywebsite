@@ -7,7 +7,7 @@ import type { WaiverData } from "@/components/WaiverDocument";
 
 const packages = [
   { id: "basic", label: "Fiesta Basic", price: "$200+" },
-  { id: "plus", label: "Fiesta Plus", price: "$400+" },
+  { id: "plus", label: "Fiesta Plus", price: "$600+" },
   { id: "pro", label: "Fiesta Pro", price: "$800+" },
   { id: "custom", label: "Custom / Personalizado", price: "Quote" },
 ];
@@ -31,14 +31,14 @@ function getRecommendation(kidCount: number) {
     return {
       package: "Fiesta Plus",
       items: [
-        "1 Large Bouncy Castle (full day, min 4 hrs)",
+        "1 Small Bouncy Castle (full day, min 4 hrs)",
         "1 Water Slide (full day, min 4hrs)",
-        `${Math.min(Math.ceil(kidCount / 4), 10)} Tables`,
+        `${Math.min(Math.ceil(kidCount / 4), 4)} Tables`,
         `${Math.min(kidCount + 5, 20)} Chairs`,
       ],
       note: "Great for birthday parties & celebrations!",
       noteEs: "¡Ideal para cumpleaños y celebraciones!",
-      estimate: "$400+",
+      estimate: "$600+",
     };
   }
   return {
@@ -426,9 +426,9 @@ export default function BookPage() {
                           )}
                           {selectedPackage === "plus" && (
                             <>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Large Bouncy Castle (full day, min 4 hrs) — $225/day</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Small Bouncy Castle (full day, min 4 hrs) — $125/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $250/day</li>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 5 Tables</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 4 Tables</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 10 Chairs</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Free delivery & setup in Denver</li>
                               <li className="flex items-center gap-2 text-fiesta-teal/50"><span>—</span> Cotton Candy Machine (coming soon)</li>
