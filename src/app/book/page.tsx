@@ -427,7 +427,7 @@ export default function BookPage() {
                           {selectedPackage === "plus" && (
                             <>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Large Bouncy Castle (full day, min 4 hrs) — $225/day</li>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $150/day</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $250/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 5 Tables</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 10 Chairs</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Free delivery & setup in Denver</li>
@@ -438,7 +438,7 @@ export default function BookPage() {
                           {selectedPackage === "pro" && (
                             <>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Small Bouncy Castle (full day, min 4 hrs) — $125/day</li>
-                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $150/day</li>
+                              <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 1 Water Slide (full day, min 4hrs) — $250/day</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> 10 Tables + 20+ Chairs</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Portable Sound System</li>
                               <li className="flex items-center gap-2"><span className="text-fiesta-green">✓</span> Free delivery & setup in Denver</li>
@@ -457,7 +457,7 @@ export default function BookPage() {
                     {[
                       { id: "bouncy-small", label: "Bouncy Castle (Small) / Brincolín (Pequeño)", price: "$125/day" },
                       { id: "bouncy-large", label: "Bouncy Castle (Large) / Brincolín (Grande)", price: "$225/day" },
-                      { id: "waterslide", label: "Water Slide / Tobogán de Agua", price: "$150/day" },
+                      { id: "waterslide", label: "Water Slide / Tobogán de Agua", price: "$250/day" },
                       { id: "tables", label: "Tables / Mesas", price: "Quote" },
                       { id: "chairs", label: "Chairs / Sillas", price: "Quote" },
                       { id: "speakers", label: "Sound System / Sistema de Sonido", price: "Quote" },

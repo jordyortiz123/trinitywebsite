@@ -59,7 +59,7 @@ export default function TermsPage() {
                   </div>
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Water Slides / Toboganes de Agua</p>
-                    <p>$150.00 per day with a minimum rental period of four (4) hours. Two (2) units available. Water slides are designated water equipment; bouncy castles are NOT authorized for water use.</p>
+                    <p>$250.00 per day with a minimum rental period of four (4) hours. Two (2) units available. Water slides are designated water equipment; bouncy castles are NOT authorized for water use.</p>
                   </div>
                   <div className="border-b border-fiesta-yellow/20 pb-3">
                     <p className="font-semibold text-fiesta-teal">Cotton Candy Machine / Máquina de Algodón de Azúcar</p>

@@ -102,7 +102,7 @@ export function generateWaiverHTML(data: WaiverData): string {
 
 <ol class="list">
   <li><strong>Bouncy Castles (Brincolines):</strong> Small unit — $125.00 per full day; Large unit — $225.00 per full day. All bouncy castle rentals are full-day rentals with a mandatory minimum rental period of four (4) hours; hourly rentals are not available. Two (2) units available in total inventory.</li>
-  <li><strong>Water Slides (Toboganes de Agua):</strong> $150.00 per day with a mandatory minimum rental period of four (4) hours. Water slides are designated water equipment. Two (2) units available.</li>
+  <li><strong>Water Slides (Toboganes de Agua):</strong> $250.00 per day with a mandatory minimum rental period of four (4) hours. Water slides are designated water equipment. Two (2) units available.</li>
   <li><strong>Cotton Candy Machine (Máquina de Algodón de Azúcar):</strong> Coming soon. This item is not currently available for rental.</li>
   <li><strong>Photo Booth (Cabina de Fotos):</strong> Coming soon. This item is not currently available for rental.</li>
   <li><strong>Tables & Chairs (Mesas y Sillas):</strong> Custom pricing based on quantity and duration. Five to ten (5–10) tables and ten or more (10+) chairs available. Additional inventory can be arranged with sufficient advance notice.</li>

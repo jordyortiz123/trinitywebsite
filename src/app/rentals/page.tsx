@@ -102,8 +102,8 @@ const individualItems = [
     icon: "🌊",
     name: "Water Slide",
     nameEs: "Tobogán de Agua",
-    pricing: "$150/day (minimum 4 hours)",
-    pricingEs: "$150/día (mínimo 4 horas)",
+    pricing: "$250/day (minimum 4 hours)",
+    pricingEs: "$250/día (mínimo 4 horas)",
     available: "2 available",
   },
   {
