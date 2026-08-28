@@ -263,24 +263,20 @@ export default function RentalsPage() {
           </div>
 
           {/* Pricing Notice */}
-          <div className="mt-12 max-w-3xl mx-auto bg-white border-2 border-fiesta-orange/40 rounded-2xl p-6 text-center shadow-sm">
-            <h3 className="text-lg font-extrabold text-fiesta-orange mb-3">
-              Please Note / Aviso Importante
-            </h3>
-            <ul className="space-y-2 text-sm text-fiesta-teal/80">
-              <li>
-                Prices may vary on holidays and weekends.
-                <span className="block text-xs text-fiesta-teal/50">Los precios pueden variar en días festivos y fines de semana.</span>
-              </li>
-              <li>
-                Bundle pricing varies depending on the items included.
-                <span className="block text-xs text-fiesta-teal/50">El precio de los paquetes varía según los artículos incluidos.</span>
-              </li>
-              <li>
-                <strong className="text-fiesta-teal">A mandatory security deposit is required on all rentals</strong> — amount quoted at booking.
-                <span className="block text-xs text-fiesta-teal/50">Se requiere un depósito de seguridad obligatorio en todas las rentas — el monto se cotiza al reservar.</span>
-              </li>
-            </ul>
+          <div className="mt-12 max-w-3xl mx-auto bg-fiesta-orange text-white rounded-2xl p-7 text-center shadow-lg">
+            <p className="text-xl md:text-2xl font-extrabold leading-snug">
+              Mandatory security deposit on all bundles.
+            </p>
+            <p className="text-lg md:text-xl font-bold mt-1">
+              Prices vary on bundles.
+            </p>
+            <p className="text-sm text-white/85 mt-3">
+              Deposit amount is quoted at booking. Prices may also vary on holidays and weekends.
+            </p>
+            <p className="text-sm text-white/70 mt-3 border-t border-white/25 pt-3">
+              Depósito de seguridad obligatorio en todos los paquetes. Los precios varían según el paquete.
+              El monto del depósito se cotiza al reservar. Los precios también pueden variar en días festivos y fines de semana.
+            </p>
           </div>
         </div>
       </section>
