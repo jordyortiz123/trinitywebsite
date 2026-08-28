@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { DEPOSIT_RATE, PACKAGES, depositFor } from "@/lib/pricing";
 
 const tiers = [
   {
+    id: "basic",
     name: "Fiesta Basic",
     nameEs: "Fiesta Básica",
     tagline: "Perfect for small gatherings",
@@ -29,6 +31,7 @@ const tiers = [
     ],
   },
   {
+    id: "plus",
     name: "Fiesta Plus",
     nameEs: "Fiesta Plus",
     tagline: "Most popular for birthday parties!",
@@ -54,6 +57,7 @@ const tiers = [
     ],
   },
   {
+    id: "pro",
     name: "Fiesta Pro",
     nameEs: "Fiesta Pro",
     tagline: "The ultimate party experience!",
@@ -150,6 +154,34 @@ const individualItems = [
 
 function TierCard({ tier }: { tier: typeof tiers[0] }) {
   const [expanded, setExpanded] = useState(false);
+  const [paying, setPaying] = useState(false);
+  const [payError, setPayError] = useState("");
+
+  const priced = PACKAGES.find((p) => p.id === tier.id);
+  const deposit = priced ? depositFor(priced.price) : 0;
+
+  /* Straight to Stripe for this package's deposit — no form first. The amount
+     is worked out server side from the package id, never sent from here. */
+  async function payDeposit() {
+    setPaying(true);
+    setPayError("");
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind: "package", id: tier.id }),
+      });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      setPayError(data.message || "Card payment could not be opened. Please call (303) 295-3886.");
+    } catch {
+      setPayError("Could not reach the payment service. Please call (303) 295-3886.");
+    }
+    setPaying(false);
+  }
 
   return (
     <div
@@ -183,6 +215,29 @@ function TierCard({ tier }: { tier: typeof tiers[0] }) {
         >
           Book Now / Reservar
         </Link>
+
+        {priced && (
+          <>
+            <button
+              onClick={payDeposit}
+              disabled={paying}
+              className={`mt-3 block w-full text-center py-3 rounded-full font-bold border-2 transition-all ${
+                paying
+                  ? "border-gray-300 text-gray-400 cursor-not-allowed"
+                  : `${tier.borderColor} text-fiesta-teal hover:bg-fiesta-cream`
+              }`}
+            >
+              {paying ? "Opening secure checkout…" : `Pay $${deposit} Deposit Now`}
+            </button>
+            <p className="mt-2 text-center text-xs text-fiesta-teal/50">
+              {Math.round(DEPOSIT_RATE * 100)}% holds your date · ${priced.price - deposit} due on the day
+              <span className="block">Pago seguro con Stripe · tarjeta, Apple Pay y Google Pay</span>
+            </p>
+            {payError && (
+              <p className="mt-2 text-center text-xs text-fiesta-red font-medium">{payError}</p>
+            )}
+          </>
+        )}
 
         <ul className="mt-6 space-y-3">
           {tier.features.map((f, i) => (
