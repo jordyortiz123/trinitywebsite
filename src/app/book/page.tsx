@@ -3,6 +3,7 @@ import { useState, useMemo, useRef } from "react";
 import type { FormEvent } from "react";
 import Image from "next/image";
 import { downloadWaiver } from "@/components/WaiverDocument";
+import { DEPOSIT_RATE, PACKAGES, depositFor } from "@/lib/pricing";
 import type { WaiverData } from "@/components/WaiverDocument";
 
 const packages = [
@@ -64,9 +65,48 @@ export default function BookPage() {
   const [waiverAccepted, setWaiverAccepted] = useState(false);
   const [showWaiver, setShowWaiver] = useState(false);
   const [waiverData, setWaiverData] = useState<WaiverData | null>(null);
+  const [paying, setPaying] = useState(false);
+  const [payError, setPayError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
   const recommendation = useMemo(() => getRecommendation(kidCount), [kidCount]);
+
+  /* Which package the card deposit applies to — the one picked explicitly, or
+     the one the smart recommendation landed on. Custom builds are quoted by
+     hand, so they have no online deposit. */
+  const payablePackage = useMemo(() => {
+    const byId = PACKAGES.find((p) => p.id === selectedPackage);
+    if (byId) return byId;
+    return PACKAGES.find((p) => p.name === recommendation?.package) ?? null;
+  }, [selectedPackage, recommendation]);
+
+  async function payDeposit() {
+    if (!payablePackage) return;
+    setPaying(true);
+    setPayError("");
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          kind: "package",
+          id: payablePackage.id,
+          name: waiverData?.customerName || "",
+          email: waiverData?.email || "",
+          eventDate: waiverData?.eventDate || "",
+        }),
+      });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      setPayError(data.message || "Card payment could not be opened. Please call us at (303) 295-3886.");
+    } catch {
+      setPayError("Could not reach the payment service. Please call us at (303) 295-3886.");
+    }
+    setPaying(false);
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -139,6 +179,43 @@ export default function BookPage() {
               </button>
             )}
           </div>
+
+          {/* Pay Deposit — Card via Stripe */}
+          {payablePackage && (
+            <div className="bg-white rounded-2xl p-6 shadow-md border-2 border-fiesta-orange mb-6 text-left">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">💳</span>
+                <div>
+                  <h3 className="font-bold text-fiesta-teal">Pay Your Deposit by Card</h3>
+                  <p className="text-sm text-fiesta-orange font-semibold">
+                    {payablePackage.name} · ${depositFor(payablePackage.price)} due now
+                  </p>
+                </div>
+              </div>
+              <p className="text-sm text-fiesta-teal/70 mb-4">
+                {Math.round(DEPOSIT_RATE * 100)}% of the ${payablePackage.price} package holds your date. The
+                remaining ${payablePackage.price - depositFor(payablePackage.price)} is due on the day of your event.
+                <span className="block text-xs text-fiesta-teal/50 mt-1">
+                  El {Math.round(DEPOSIT_RATE * 100)}% del paquete aparta tu fecha. El saldo se paga el día del evento.
+                </span>
+              </p>
+              <button
+                onClick={payDeposit}
+                disabled={paying}
+                className={`w-full py-3 rounded-full font-bold text-white transition-all shadow-md ${
+                  paying ? "bg-gray-400 cursor-not-allowed" : "bg-fiesta-orange hover:bg-fiesta-red"
+                }`}
+              >
+                {paying ? "Opening secure checkout…" : `Pay $${depositFor(payablePackage.price)} Deposit / Pagar Depósito`}
+              </button>
+              <p className="text-xs text-fiesta-teal/40 mt-3 text-center">
+                Secure checkout by Stripe — card, Apple Pay &amp; Google Pay. We never see your card details.
+              </p>
+              {payError && (
+                <p className="text-sm text-fiesta-red font-medium mt-3 text-center">{payError}</p>
+              )}
+            </div>
+          )}
 
           {/* Pay Deposit — Cash App */}
           <div className="bg-white rounded-2xl p-6 shadow-md border-2 border-green-400 mb-6 text-left">
