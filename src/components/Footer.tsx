@@ -59,7 +59,7 @@ export default function Footer() {
             <h3 className="font-bold text-fiesta-yellow mb-4">Follow Us / Síguenos</h3>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com/trinityfiestafun"
+                href="https://instagram.com/fiestafunfamiliarentals"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-fiesta-pink rounded-full flex items-center justify-center transition-colors"

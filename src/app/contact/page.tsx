@@ -147,10 +147,10 @@ export default function ContactPage() {
                       <p className="text-sm text-fiesta-teal/60">Email us anytime / Escríbenos cuando quieras</p>
                     </div>
                   </a>
-                  <a href="https://instagram.com/trinityfiestafun" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-fiesta-cream rounded-xl hover:bg-fiesta-pink/20 transition-colors">
+                  <a href="https://instagram.com/fiestafunfamiliarentals" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-fiesta-cream rounded-xl hover:bg-fiesta-pink/20 transition-colors">
                     <span className="text-3xl">📸</span>
                     <div>
-                      <p className="font-bold text-fiesta-teal">@trinityfiestafun</p>
+                      <p className="font-bold text-fiesta-teal">@fiestafunfamiliarentals</p>
                       <p className="text-sm text-fiesta-teal/60">Follow us on Instagram / Síguenos en Instagram</p>
                     </div>
                   </a>

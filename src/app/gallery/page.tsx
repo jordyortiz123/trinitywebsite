@@ -78,12 +78,12 @@ export default function GalleryPage() {
           <p className="text-center text-fiesta-teal/60 mb-12 max-w-2xl mx-auto">
             Photos from our events across Denver. Follow us on{" "}
             <a
-              href="https://instagram.com/trinityfiestafun"
+              href="https://instagram.com/fiestafunfamiliarentals"
               target="_blank"
               rel="noopener noreferrer"
               className="text-fiesta-pink font-bold hover:underline"
             >
-              @trinityfiestafun
+              @fiestafunfamiliarentals
             </a>{" "}
             for more!
           </p>
@@ -140,7 +140,7 @@ export default function GalleryPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <a
-                href="https://instagram.com/trinityfiestafun"
+                href="https://instagram.com/fiestafunfamiliarentals"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-fiesta-pink hover:bg-fiesta-red text-white px-6 py-2 rounded-full font-bold transition-colors"
